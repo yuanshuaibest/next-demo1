@@ -6,7 +6,7 @@ import { getBlogs, delBlog } from './action'
 export default function Blogs() {
   type BlogData = {
     id: number;
-    title: string;
+    name: string;
     content: string;
     likeCount: number;
   }
@@ -42,7 +42,7 @@ export default function Blogs() {
     <div>
       {blogs.map(blog => (
         <div key={blog.id} className="border p-2 my-2 relative">
-          <h2 className="text-xl">{blog.title}</h2>
+          <h2 className="text-xl">{blog.name}</h2>
           <p>{blog.content}</p>
           <button className="underline absolute top-4 right-3" onClick={() => handleDelete(blog.id)}>Delete</button>
         </div>
